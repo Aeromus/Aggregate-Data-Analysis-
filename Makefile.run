@@ -1,0 +1,37 @@
+// Makefile runner
+// Runs 'make' in the CWD specified in the runner's console, then executes a program called 'main'
+//
+// Instructions:
+// Set the CWD for this program using the 'CWD' button on the runner console
+// 
+// If you leave the 'Command' box empty, this runner will run a program called 'main'
+// If you wish to supply arguments to your 'main' program or run a program of a different name,
+//   enter the pathname of that file relative to ~/workspace in the 'Command' box, along with any args
+//
+// For more information see https://docs.c9.io/custom_runners.html
+
+{
+  "script": [
+    "set -e",
+    "printf \"\\e[1;34mRunning make in $PWD\\e[0m\n\"",
+    "make -j",
+
+    // intelligently handle the Command window
+    "if [[ -z \"$file\" ]]; then",
+    "    file=$file_path/main",
+    "fi",
+
+    // "printf \"\\e[1;32mfile='$file'\\e[0m\n\"",
+    "if [ \"$debug\" == true ]; then ",
+    "    stdbuf -o 0 -e 0 node $HOME/.c9/bin/c9gdbshim.js $file $args",
+    "else",
+    "    stdbuf -o 0 -e 0 $file $args",
+    "fi"
+  ],
+
+  // "info": "file_path: $file_path\nfile: $file\nargs: $args\nfile_name: $file_name\nproject_path: $project_path\nfile_extension: $file_extension\nfile_base_name: $file_base_name\ncommand: $command\n",
+  "debugger": "gdb",
+  "$debugDefaultState": false,
+  "env": {},
+  "selector": "^.*\\.(cpp|cc)$"
+}
