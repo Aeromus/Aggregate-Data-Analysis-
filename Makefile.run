@@ -14,18 +14,15 @@
   "script": [
     "set -e",
     "printf \"\\e[1;34mRunning make in $PWD\\e[0m\n\"",
+    
     "make -j",
 
-    // intelligently handle the Command window
-    "if [[ -z \"$file\" ]]; then",
-    "    file=$file_path/main",
-    "fi",
-
     // "printf \"\\e[1;32mfile='$file'\\e[0m\n\"",
+    // "printf \"\\e[1;32mfile_path='$file_path'\\e[0m\n\"",
     "if [ \"$debug\" == true ]; then ",
-    "    stdbuf -o 0 -e 0 node $HOME/.c9/bin/c9gdbshim.js $file $args",
+    "    stdbuf -o 0 -e 0 node $HOME/.c9/bin/c9gdbshim.js $file_path/main",
     "else",
-    "    stdbuf -o 0 -e 0 $file $args",
+    "    stdbuf -o 0 -e 0 $file_path/main $args",
     "fi"
   ],
 
