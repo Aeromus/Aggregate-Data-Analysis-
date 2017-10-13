@@ -60,9 +60,15 @@ int list_length(Employment *emp) {
 }
 
 
-/*
-TODO: implement this function
+
+//TODO: implement this function
 void append_lists(Employment* list1, Employment* list2) {
+    
+    while (list1->next != NULL){
+        list1 = list1->next;
+    }
+    
+    list1->next = list2;
+    
 }
 
-*/

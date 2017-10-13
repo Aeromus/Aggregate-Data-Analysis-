@@ -31,9 +31,11 @@ Employment* dir_to_empl_list(std::string path) {
 }*/
 	// Append them into one list
 	std::cout << "--------------\n INITALIZING TEST \n ---------------" << std::endl;
-	Employment *list = build_empl_list("data/01.txt");
+	Employment *list_main = build_empl_list("data/01.txt");
+	Employment *list_temp = build_empl_list("data/02.txt");
+	append_lists(list_main, list_temp);
 	//print_every_empl(list);
-	std::cout << "List Length is : \t" <<  list_length(list) << std::endl;
+	std::cout << "List Length is : \t" <<  list_length(list_main) << std::endl;
 	// Compute the statistics
 
 	// Fill out the report
