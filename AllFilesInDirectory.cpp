@@ -22,10 +22,13 @@ Employment* AllFilesInDirectory(std::string path) {
 		if (entry->d_name[0] != '.') {
 			std::string filename = base + (std::string) entry->d_name;
 
-			/* Create your linked-lists with 
-			   build_empl_list() and append_lists()
-			   */
-
+		if (head ==NULL)
+			head = build_empl_list(filename);
+			
+		else{
+			Employment * temp_list = build_empl_list(filename);
+			append_lists(head, temp_list);
+			}
 		}
 	}
 

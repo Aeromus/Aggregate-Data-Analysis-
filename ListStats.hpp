@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Employment.hpp"
+#include "List.hpp"
+#include <cmath>
 
 /* implement these functions */
 unsigned long total_annual_wages(Employment *emp);

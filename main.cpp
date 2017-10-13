@@ -3,39 +3,22 @@
 #include "List.hpp"
 #include "ListStats.hpp"
 #include "Report.hpp"
+#include "AllFilesInDirectory.hpp"
 
 
 
 int main(void) {
 	// Read in all employment lists
-/*
-Employment* dir_to_empl_list(std::string path) {
-	struct dirent *entry;DIR *dp;
-	// Open the directory containing the data
-	dp = opendir(path.c_str());
-	if (dp == NULL) {
-		perror("opendir");
-		return (Employment *)NULL;
-		}
-	std::string base(path);
-	base += "/";
-	Employment* head = (Employment *)NULL;
-	while ((entry = readdir(dp))) {
-		if (entry->d_name[0] != '.') {
-			std::string filename = base + (std::string) entry->d_name;
-			//Create your linked-lists with   build_empl_list() and append_lists()   
-		}
-	}
-	closedir(dp);
-	return head;
-}*/
+
+	Employment* final_list = AllFilesInDirectory("data");
+
 	// Append them into one list
 	std::cout << "--------------\n INITALIZING TEST \n ---------------" << std::endl;
 	Employment *list_main = build_empl_list("data/01.txt");
 	Employment *list_temp = build_empl_list("data/02.txt");
 	append_lists(list_main, list_temp);
 	//print_every_empl(list);
-	std::cout << "List Length is : \t" <<  list_length(list_main) << std::endl;
+	std::cout << "List Length is : \t" <<  list_length(final_list) << std::endl;
 	std::cout << "Total Wages : \t" << total_annual_wages(list_main) << std::endl;
 	std::cout << "Max Wages : \t" << max_annual_wages(list_main) << std::endl;
 	std::cout << "Min Wages : \t" << min_annual_wages(list_main) << std::endl;

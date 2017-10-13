@@ -43,10 +43,22 @@ unsigned long max_annual_wages(Employment *emp) {
 
 
 
-/* TODO: implement this function
+// TODO: implement this function
 float stdev_annual_wages(Employment *emp) {
+    unsigned long wages = total_annual_wages(emp);
+    int n = list_length(emp);
+    float mean = static_cast<float>(wages) / static_cast<float>(n);
+    float sos = 0.0;
+    while(emp->next != NULL)
+    {
+        float diff = emp->total_annual_wages - mean;
+        sos += diff * diff;
+        emp = emp->next;
+    }
+    
+    return sqrt(sos/n);
 }
-*/
+
 
 
 // TODO: implement this function
