@@ -5,46 +5,55 @@
 Employment* build_empl_list(std::string filename) {
     
     //Initialise file stream
-    ifstream in(filename);
+    std::ifstream inFile(filename);
     
     //Variables to read in from the file
-    string a_fips, junk;
-    unsigned estabs;
-    unsigned long emplvl, wages;
+    std::string a_fips, junk;
+    unsigned estabs, emplvl;
+    unsigned long wages;
     
     //Burn the First line of Lables
-    getLine(filename, junk);
+    std::getline(inFile, junk);
     
 //read in and set head
-in >> a_fips >> estabs >> emplvl >> wages;
+inFile >> a_fips >> estabs >> emplvl >> wages;
 Employment *head = new Employment(a_fips, estabs, emplvl, wages);
 Employment *temp = head;
-while(!in.eof){
+while(!inFile.eof()){
     //Read in Employment And Append to head
     //Order: area_fips	annual_avg_estabs	annual_avg_emplvl	total_annual_wages
-    in >> a_fips >> estabs >> emplvl >> wages;
+    inFile >> a_fips >> estabs >> emplvl >> wages;
     temp->next = new Employment(a_fips, estabs, emplvl, wages);
     temp = temp->next;
     
 }
 
-in.close();
+inFile.close();
+return head;
 }
     
 
 // TODO: implement this function
 void print_every_empl(Employment *emp) {
+    
+    while(emp->next != NULL){
+        std::cout<< emp->area_fips << "\t" << emp->annual_avg_estabs << "\t" << emp->annual_avg_emplvl << "\t" << emp->total_annual_wages << std::endl;
+        emp = emp->next;
+    }
+    
 }
 
 
 
-// TODO: implement this function
+// TODO: implement this function 
+/*
 int list_length(Employment *emp) {
 }
 
 
 
-// TODO: implement this function
-void append_lists(Employment* list1, Employment* list2); {
+TODO: implement this function
+void append_lists(Employment* list1, Employment* list2) {
 }
 
+*/

@@ -3,6 +3,8 @@
 #include <string>
 #include <dirent.h>
 #include <fstream>
+#include <iostream>
+#include <sstream>
 
 #include "Employment.hpp"
 
