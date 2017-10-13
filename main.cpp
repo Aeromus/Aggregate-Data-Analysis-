@@ -36,6 +36,9 @@ Employment* dir_to_empl_list(std::string path) {
 	append_lists(list_main, list_temp);
 	//print_every_empl(list);
 	std::cout << "List Length is : \t" <<  list_length(list_main) << std::endl;
+	std::cout << "Total Wages : \t" << total_annual_wages(list_main) << std::endl;
+	std::cout << "Max Wages : \t" << max_annual_wages(list_main) << std::endl;
+	std::cout << "Min Wages : \t" << min_annual_wages(list_main) << std::endl;
 	// Compute the statistics
 
 	// Fill out the report
