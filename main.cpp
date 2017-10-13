@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <dirent.h>
 #include "List.hpp"
 #include "ListStats.hpp"
 #include "Report.hpp"
@@ -9,6 +9,26 @@
 int main(void) {
 	// Read in all employment lists
 
+Employment* dir_to_empl_list(std::string path) {
+	struct dirent *entry;DIR *dp;
+	// Open the directory containing the data
+	dp = opendir(path.c_str());
+	if (dp == NULL) {
+		perror("opendir");
+		return (Employment *)NULL;
+		}
+	std::string base(path);
+	base += "/";
+	Employment* head = (Employment *)NULL;
+	while ((entry = readdir(dp))) {
+		if (entry->d_name[0] != '.') {
+			std::string filename = base + (std::string) entry->d_name;
+			/* Create your linked-lists with   build_empl_list() and append_lists()   */
+		}
+	}
+	closedir(dp);
+	return head;
+}
 	// Append them into one list
 
 	// Compute the statistics

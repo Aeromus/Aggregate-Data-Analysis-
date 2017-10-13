@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <dirent.h>
+#include <fstream>
 
 #include "Employment.hpp"
 
