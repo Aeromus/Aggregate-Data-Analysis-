@@ -30,12 +30,14 @@ Employment* dir_to_empl_list(std::string path) {
 	return head;
 }*/
 	// Append them into one list
-	std::cout << "test" << std::endl;
+	std::cout << "--------------\n INITALIZING TEST \n ---------------" << std::endl;
 	Employment *list = build_empl_list("data/01.txt");
-	print_every_empl(list);
+	//print_every_empl(list);
+	std::cout << "List Length is : \t" <<  list_length(list) << std::endl;
 	// Compute the statistics
 
 	// Fill out the report
+	/*
 	Report rpt;
 
 	rpt.num_areas      = 1;
@@ -56,5 +58,5 @@ Employment* dir_to_empl_list(std::string path) {
 	rpt.min_estabs     = 13;
 
 	// Print the report
-	std::cout << rpt;
+	std::cout << rpt; */
 }

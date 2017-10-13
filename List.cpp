@@ -46,12 +46,21 @@ void print_every_empl(Employment *emp) {
 
 
 // TODO: implement this function 
-/*
+
 int list_length(Employment *emp) {
+    int count = 0;
+    
+    while(emp->next != NULL)
+    {
+        count++;
+        emp = emp->next;
+    }
+    
+    return count;
 }
 
 
-
+/*
 TODO: implement this function
 void append_lists(Employment* list1, Employment* list2) {
 }
