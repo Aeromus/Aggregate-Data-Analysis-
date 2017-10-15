@@ -62,7 +62,7 @@ float stdev_annual_wages(Employment *emp) {
 
 
 // TODO: implement this function
-unsigned annual_avg_emplvl(Employment *emp) {
+unsigned total_annual_emplvl(Employment *emp) {
     unsigned total =  0;
     
     while (emp->next != NULL){
@@ -105,7 +105,7 @@ unsigned min_annual_emplvl(Employment *emp) {
 
 
 // TODO: implement this function
-unsigned annual_avg_estabs(Employment *emp) {
+unsigned total_annual_estabs(Employment *emp) {
     unsigned total = 0;
     while(emp->next != NULL)
     {
