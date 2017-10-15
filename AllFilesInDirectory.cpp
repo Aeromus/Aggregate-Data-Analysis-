@@ -29,15 +29,15 @@ Employment* AllFilesInDirectory(std::string path) {
 			
 		else{
 			Employment * temp_list = build_empl_list(filename);
-			std::cout<< "Head + Temp = \n" << list_length(head) << "+" << list_length(temp_list) <<  "=" << list_length(head) +list_length(temp_list) << std::endl;
+			//std::cout<< "Head + Temp = \n" << list_length(head) << "+" << list_length(temp_list) <<  "=" << list_length(head) +list_length(temp_list) << std::endl;
 			append_lists(head, temp_list);
-			std::cout << "Combined Length :\n" << list_length(head) << std::endl;
+			//std::cout << "Combined Length :\n" << list_length(head) << std::endl;
 			
 			}
 		}
 	}
 	
-	std::cout << count << " Files were opened.\n";
+//	std::cout << count << " Files were opened.\n";
 	closedir(dp);
 	return head;
 }
