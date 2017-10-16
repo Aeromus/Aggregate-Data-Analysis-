@@ -17,13 +17,13 @@ Statistics
   comparator. You may have written these comparators for HW3, and are free to
   re-use them here as the new listsort() function is compatible with
   qsort()-style comparators. The difference this time is that your comparators
-  must implement a stable sort.
+  must break ties by sorting on the FIPS area code as a secondary key.
 
 * For HW5 you are required to compute counts of unique and distinct wages. If
   you have already impemented this functionality in HW4 without sorting the
-  lists, you will now have to re-implement this. Additionally, the new Report
-  asks for you to also count unique and distinct employment levels and numbers
-  of establishments per FIPS area.
+  lists, you will now have to re-implement this using the listsort() function.
+  Additionally, the new Report asks for you to also count unique and distinct
+  employment levels and numbers of establishments per FIPS area.
 
 * Your program must clean up after itself, and Valgrind must report no leaks in
   your own code. Leaks in standard libararies are not your responsibility.
