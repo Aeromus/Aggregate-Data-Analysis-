@@ -9,7 +9,31 @@ Statistics
 * https://data.bls.gov/cew/doc/titles/ownership/ownership_titles.htm
 * https://data.bls.gov/cew/doc/layouts/csv_annual_layout.htm
 
-# Important updates
+
+# Important updates for HW5
+
+* I have added function prototypes to ListSort.hpp describing functions that
+  you should implement. Each of the new sort functions need a corresponding
+  comparator. You may have written these comparators for HW3, and are free to
+  re-use them here as the new listsort() function is compatible with
+  qsort()-style comparators. The difference this time is that your comparators
+  must implement a stable sort.
+
+* For HW5 you are required to compute counts of unique and distinct wages. If
+  you have already impemented this functionality in HW4 without sorting the
+  lists, you will now have to re-implement this. Additionally, the new Report
+  asks for you to also count unique and distinct employment levels and numbers
+  of establishments per FIPS area.
+
+* Your program must clean up after itself, and Valgrind must report no leaks in
+  your own code. Leaks in standard libararies are not your responsibility.
+
+* Your program must not abort on memory errors as found by the Address
+  Sanitizer, (enabled by g++'s -fsanitize=address flag).  We'll look for this
+  as we grade your submission; this means that you should test this yourself.
+
+
+# Important updates for HW4
 
 * You should not modify the files in the data/ directory in order to make
   your program work properly. This includes renaming the files.  We will grade
