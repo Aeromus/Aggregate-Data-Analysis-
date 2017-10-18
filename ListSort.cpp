@@ -1,7 +1,7 @@
 /* Note:
  *
- * You don't need to modify this file to make your program work. If you think
- * you do, you're trying too hard ;)
+ * You don't need to modify the listsort() function to make your program work.
+ * If you think you do, you're trying too hard ;)
  */
 
 #include "ListSort.hpp"
@@ -84,13 +84,18 @@ Employment *listsort(Employment *list, int (*compar)(const void*, const void*)) 
 
 
 
-/* You must implement comparators to use with listsort() which implement stable 
- * sorts.
+/* You must implement comparators to use with listsort() which implement stable
+ * sorts which fall-back to the FIPS area code as a secondary key to break ties.
  *
  * Hint: The signature of comparators used with listsort() are identical to the
  * comparators used with the standard qsort() function
  */
 
+
+
+/* TODO: write a comparator to sort on annual average # of establishments,
+ *       breaking ties with the FIPS area code
+ */
 
 /* TODO: implement this function
 Employment* listsort_employment_by_annual_avg_estabs(Employment *list) {
@@ -98,11 +103,21 @@ Employment* listsort_employment_by_annual_avg_estabs(Employment *list) {
 */
 
 
+
+/* TODO: write a comparator to sort on annual average employment level,
+ *       breaking ties with the FIPS area code
+ */
+
 /* TODO: implement this function
 Employment* listsort_employment_by_annual_avg_emplvl(Employment *list) {
 }
 */
 
+
+
+/* TODO: write a comparator to sort on total annual wages,
+ *       breaking ties with the FIPS area code
+ */
 
 /* TODO: implement this function
 Employment* listsort_employment_by_total_annual_wages(Employment *list) {
