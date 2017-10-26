@@ -1,4 +1,4 @@
-CXXFLAGS = -Wall -Wextra -g3 -std=c++11
+CXXFLAGS = -Wall -Wextra -g3 -std=c++11 -fsanitize=address
 
 CPP_SRCS := $(wildcard *.cpp)
 HPP_SRCS := $(wildcard *.hpp)

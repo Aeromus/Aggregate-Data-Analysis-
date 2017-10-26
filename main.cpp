@@ -4,6 +4,7 @@
 #include "ListStats.hpp"
 #include "Report.hpp"
 #include "AllFilesInDirectory.hpp"
+#include "ListSort.hpp"
 
 
 
@@ -13,6 +14,10 @@ int main(void) {
 	Employment* final_list = AllFilesInDirectory("data");
 
 	// Append them into one list
+	
+	Employment* sorted_list  = listsort_employment_by_total_annual_wages(final_list);
+	
+	print_every_empl(sorted_list);
 	
 	// Compute the statistics
 

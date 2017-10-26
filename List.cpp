@@ -75,3 +75,13 @@ void append_lists(Employment* list1, Employment* list2) {
     
 }
 
+
+void cleanup_list(Employment* list){
+    Employment* head = list;
+    Employment* tempNode;
+    while(list->next != NULL){
+        tempNode =head;
+        head = head->next;
+        delete tempNode;
+    }
+}

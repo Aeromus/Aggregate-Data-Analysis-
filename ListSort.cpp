@@ -96,30 +96,83 @@ Employment *listsort(Employment *list, int (*compar)(const void*, const void*)) 
 /* TODO: write a comparator to sort on annual average # of establishments,
  *       breaking ties with the FIPS area code
  */
-
-/* TODO: implement this function
-Employment* listsort_employment_by_annual_avg_estabs(Employment *list) {
+static int cmp_empl_by_annual_avg_estabs(const void *l, const void *r){
+	if(((Employment*)l)-> annual_avg_estabs > ((Employment*)r)-> annual_avg_estabs)
+		return -1;
+	else if(((Employment*)l)->annual_avg_estabs < ((Employment*)r)->annual_avg_estabs)
+		return 1; 
+	else if(((Employment*)l)->annual_avg_estabs == ((Employment*)r)->annual_avg_estabs)
+	{
+		if(((Employment*)l)->area_fips < ((Employment*)r)->area_fips)
+			return -1;
+		else
+			return 1;
+	}
+		return 0;
 }
-*/
+ 
+
+// TODO: implement this function
+Employment* listsort_employment_by_annual_avg_estabs(Employment *list) {
+	 return listsort(list, cmp_empl_by_annual_avg_estabs);
+	
+}
+
 
 
 
 /* TODO: write a comparator to sort on annual average employment level,
  *       breaking ties with the FIPS area code
  */
-
-/* TODO: implement this function
-Employment* listsort_employment_by_annual_avg_emplvl(Employment *list) {
+ 
+ static int cmp_empl_by_annual_avg_emplvl(const void *l, const void *r){
+	if(((Employment*)l)->annual_avg_emplvl > ((Employment*)r)-> annual_avg_emplvl)
+		return -1;
+	else if(((Employment*)l)->annual_avg_emplvl < ((Employment*)r)->annual_avg_emplvl)
+		return 1; 
+	else if(((Employment*)l)->annual_avg_emplvl == ((Employment*)r)->annual_avg_emplvl)
+	{
+		if(((Employment*)l)->area_fips < ((Employment*)r)->area_fips)
+			return -1;
+		else
+			return 1;
+	}
+	else
+		return 0;
 }
-*/
+
+// TODO: implement this function
+
+Employment* listsort_employment_by_annual_avg_emplvl(Employment *list) {
+	return listsort(list, cmp_empl_by_annual_avg_emplvl);
+	
+}
+
 
 
 
 /* TODO: write a comparator to sort on total annual wages,
  *       breaking ties with the FIPS area code
  */
-
-/* TODO: implement this function
-Employment* listsort_employment_by_total_annual_wages(Employment *list) {
+ 
+ static int cmp_empl_by_annual_wages(const void *l, const void *r){
+	if(((Employment*)l)-> total_annual_wages > ((Employment*)r)-> total_annual_wages)
+		return -1;
+	else if(((Employment*)l)->total_annual_wages < ((Employment*)r)->total_annual_wages)
+		return 1; 
+	else if(((Employment*)l)->total_annual_wages == ((Employment*)r)->total_annual_wages)
+	{
+		if(((Employment*)l)->area_fips < ((Employment*)r)->area_fips)
+			return -1;
+		else
+			return 1;
+	}
+		return 0;
 }
-*/
+
+// TODO: implement this function
+
+Employment* listsort_employment_by_total_annual_wages(Employment *list) {
+	return listsort(list, cmp_empl_by_annual_wages);
+}
+
