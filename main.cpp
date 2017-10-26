@@ -17,7 +17,8 @@ int main(void) {
 	
 	Employment* sorted_list  = listsort_employment_by_total_annual_wages(final_list);
 	
-	print_every_empl(sorted_list);
+	//print_every_empl(sorted_list);
+	
 	
 	// Compute the statistics
 
@@ -44,4 +45,6 @@ int main(void) {
 
 	// Print the report
 	std::cout << rpt; 
+	
+	cleanup_list(sorted_list);
 }
