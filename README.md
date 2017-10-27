@@ -32,6 +32,16 @@ Statistics
   Sanitizer, (enabled by g++'s -fsanitize=address flag).  We'll look for this
   as we grade your submission; this means that you should test this yourself.
 
+# Sample program output for HW5
+
+Pull my latest changes into your master branch and find the files under the
+sample_output/ directory to see what your program's final output ought to look
+like, as well as what Valgrind ought to report for your program.
+
+The output of your program when built with -fsanitize=address should be
+identical to its ordinary output. In other words, ASAN should not find any
+problems at all.
+
 
 # Important updates for HW4
 
