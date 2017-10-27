@@ -24,3 +24,15 @@ unsigned total_annual_estabs(Employment *emp);
 unsigned max_annual_estabs(Employment *emp);
 
 unsigned min_annual_estabs(Employment *emp);
+
+int distinct_annual_wages(Employment* list);
+
+int distinct_avg_emp_lvl(Employment* list);
+
+int distinct_avg_estabs(Employment* list);
+
+unsigned long unique_avg_estabs(Employment *list);
+
+unsigned long unique_avg_emplvl(Employment *list);
+
+unsigned long unique_annual_wages(Employment *list);

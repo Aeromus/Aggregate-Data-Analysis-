@@ -114,7 +114,8 @@ static int cmp_empl_by_annual_avg_estabs(const void *l, const void *r){
 
 // TODO: implement this function
 Employment* listsort_employment_by_annual_avg_estabs(Employment *list) {
-	 return listsort(list, cmp_empl_by_annual_avg_estabs);
+	Employment * temp = listsort(list, cmp_empl_by_annual_avg_estabs);
+	 return temp;
 	
 }
 

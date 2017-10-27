@@ -146,3 +146,116 @@ unsigned min_annual_estabs(Employment *emp) {
     return min;
 }
 
+int distinct_annual_wages(Employment* list) {
+    int count = 1;
+    int len   =  list_length(list);
+    int test  = 0;
+    if (len < 1)
+        return 0;
+    Employment* temp =  list;
+    while(temp->next->next != NULL)  
+    {
+        if (temp->total_annual_wages != temp->next->total_annual_wages) {
+            count++;
+        }
+        temp = temp->next;
+        test++;
+    }
+    
+    //std::cout << "*******Went through : " << test << " items*******\n\n";
+    return count;
+}
+
+int distinct_avg_emp_lvl(Employment* list) {
+    int count = 1;
+    int len =  list_length(list);
+    if (len < 1)
+        return 0;
+    Employment* temp =  list;
+    while(temp->next->next != NULL)  
+    {
+        if (temp->annual_avg_emplvl != temp->next->annual_avg_emplvl) {
+            count++;
+        }
+        temp = temp->next;
+    }
+
+    return count;
+}
+
+int distinct_avg_estabs(Employment* list) {
+    int count = 1;
+    int len =  list_length(list);
+    if (len < 1)
+        return 0;
+    Employment* temp =  list;
+    while(temp->next->next != NULL)  
+    {
+        if (temp->annual_avg_estabs != temp->next->annual_avg_estabs) {
+            count++;
+        }
+        temp = temp->next;
+    }
+
+    return count;
+}
+
+unsigned long unique_annual_wages(Employment *list) {
+	int count = 0, seen = 0, test = 0;
+    Employment* temp =list;
+    while(temp->next->next != NULL){
+        if (temp->total_annual_wages == temp->next->total_annual_wages) {
+            seen++;
+        }
+        else {
+            if (seen == 0) {
+                count++;
+            }
+            seen = 0;
+        }
+        test++;
+        temp = temp->next;
+    }
+    std::cout << "*******Went through : " << test << " items*******\n\n";
+    return count;
+}
+
+unsigned long unique_avg_emplvl(Employment *list) {
+	int count = 0, seen = 0, test = 0;
+    Employment* temp =list;
+    while(temp->next->next != NULL){
+        if (temp->annual_avg_emplvl == temp->next->annual_avg_emplvl) {
+            seen++;
+        }
+        else {
+            if (seen == 0) {
+                count++;
+            }
+            seen = 0;
+        }
+        test++;
+        temp = temp->next;
+    }
+    //std::cout << "*******Went through : " << test << " items*******\n\n";
+    return count;
+}
+
+unsigned long unique_avg_estabs(Employment *list) {
+	int count = 0, seen = 0, test = 0;
+    Employment* temp =list;
+    while(temp->next->next != NULL){
+        if (temp->annual_avg_estabs == temp->next->annual_avg_estabs) {
+            seen++;
+        }
+        else {
+            if (seen == 0) {
+                count++;
+            }
+            seen = 0;
+        }
+        test++;
+        temp = temp->next;
+    }
+    //std::cout << "*******Went through : " << test << " items*******\n\n";
+    return count;
+}
