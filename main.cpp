@@ -19,7 +19,7 @@ int main(void) {
 	
 	
 	// Compute the statistics
-std::cout << list_length(final_list) <<std::endl;
+	//std::cout << list_length(final_list) <<std::endl;
 	// Fill out the report
 	
 	Report rpt;

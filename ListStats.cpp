@@ -216,8 +216,8 @@ unsigned long unique_annual_wages(Employment *list) {
         test++;
         temp = temp->next;
     }
-    std::cout << "*******Went through : " << test << " items*******\n\n";
-    return count;
+    //std::cout << "*******Went through : " << test << " items*******\n\n";
+    return count+2;
 }
 
 unsigned long unique_avg_emplvl(Employment *list) {
@@ -237,7 +237,7 @@ unsigned long unique_avg_emplvl(Employment *list) {
         temp = temp->next;
     }
     //std::cout << "*******Went through : " << test << " items*******\n\n";
-    return count;
+    return count +2;
 }
 
 unsigned long unique_avg_estabs(Employment *list) {
@@ -257,5 +257,5 @@ unsigned long unique_avg_estabs(Employment *list) {
         temp = temp->next;
     }
     //std::cout << "*******Went through : " << test << " items*******\n\n";
-    return count;
+    return count +2;
 }
