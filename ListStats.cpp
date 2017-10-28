@@ -153,7 +153,7 @@ int distinct_annual_wages(Employment* list) {
     if (len < 1)
         return 0;
     Employment* temp =  list;
-    while(temp->next->next != NULL)  
+    while(temp->next != NULL)  
     {
         if (temp->total_annual_wages != temp->next->total_annual_wages) {
             count++;
@@ -172,7 +172,7 @@ int distinct_avg_emp_lvl(Employment* list) {
     if (len < 1)
         return 0;
     Employment* temp =  list;
-    while(temp->next->next != NULL)  
+    while(temp->next != NULL)  
     {
         if (temp->annual_avg_emplvl != temp->next->annual_avg_emplvl) {
             count++;
@@ -189,7 +189,7 @@ int distinct_avg_estabs(Employment* list) {
     if (len < 1)
         return 0;
     Employment* temp =  list;
-    while(temp->next->next != NULL)  
+    while(temp->next != NULL)  
     {
         if (temp->annual_avg_estabs != temp->next->annual_avg_estabs) {
             count++;
@@ -203,7 +203,7 @@ int distinct_avg_estabs(Employment* list) {
 unsigned long unique_annual_wages(Employment *list) {
 	int count = 0, seen = 0, test = 0;
     Employment* temp =list;
-    while(temp->next->next != NULL){
+    while(temp->next != NULL){
         if (temp->total_annual_wages == temp->next->total_annual_wages) {
             seen++;
         }
@@ -223,7 +223,7 @@ unsigned long unique_annual_wages(Employment *list) {
 unsigned long unique_avg_emplvl(Employment *list) {
 	int count = 0, seen = 0, test = 0;
     Employment* temp =list;
-    while(temp->next->next != NULL){
+    while(temp->next != NULL){
         if (temp->annual_avg_emplvl == temp->next->annual_avg_emplvl) {
             seen++;
         }
@@ -243,7 +243,7 @@ unsigned long unique_avg_emplvl(Employment *list) {
 unsigned long unique_avg_estabs(Employment *list) {
 	int count = 0, seen = 0, test = 0;
     Employment* temp =list;
-    while(temp->next->next != NULL){
+    while(temp->next != NULL){
         if (temp->annual_avg_estabs == temp->next->annual_avg_estabs) {
             seen++;
         }
