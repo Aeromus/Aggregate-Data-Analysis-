@@ -1,0 +1,31 @@
+This file illustrates what a memory leak may look like. Notice that the counts
+of bytes "definitely lost" and "indirectly lost" are non-zero. Futher notice
+that the names of the functions in the call stack (build_empl_list,
+AllFilesInDirectory, main) are functions which belong to the source code files
+in this project.
+
+==32161== Memcheck, a memory error detector
+==32161== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==32161== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==32161== Command: ./main
+==32161== 
+==32161== 
+==32161== HEAP SUMMARY:
+==32161==     in use at exit: 202,802 bytes in 6,542 blocks
+==32161==   total heap usage: 10,041 allocs, 3,499 frees, 862,189 bytes allocated
+==32161== 
+==32161== 202,802 (32 direct, 202,770 indirect) bytes in 1 blocks are definitely lost in loss record 8 of 8
+==32161==    at 0x4C2F15F: operator new(unsigned long) (vg_replace_malloc.c:334)
+==32161==    by 0x4027DB: build_empl_list(std::string) (List.cpp:30)
+==32161==    by 0x402FBA: AllFilesInDirectory(std::string) (main.cpp:28)
+==32161==    by 0x4030E7: main (main.cpp:40)
+==32161== 
+==32161== LEAK SUMMARY:
+==32161==    definitely lost: 32 bytes in 1 blocks
+==32161==    indirectly lost: 202,770 bytes in 6,541 blocks
+==32161==      possibly lost: 0 bytes in 0 blocks
+==32161==    still reachable: 0 bytes in 0 blocks
+==32161==         suppressed: 0 bytes in 0 blocks
+==32161== 
+==32161== For counts of detected and suppressed errors, rerun with: -v
+==32161== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
